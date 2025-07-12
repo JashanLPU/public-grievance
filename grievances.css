@@ -1,0 +1,150 @@
+/* --- Grievance Page - Complete Dark/Purple Theme Stylesheet --- */
+
+:root {
+    --primary-color: #7c3aed;   /* Vibrant Purple */
+    --primary-dark: #6d28d9;   /* Darker Purple */
+    --text-dark: #18181b;       /* Zinc 900 */
+    --text-light: #f4f4f5;      /* Zinc 100 */
+    --text-muted: #a1a1aa;      /* Zinc 400 */
+    --bg-dark: #18181b;         /* Main Background */
+    --bg-card: #27272a;         /* Cards and Panels */
+    --border-color: #3f3f46;    /* Border */
+
+    /* Severity Colors */
+    --severity-critical: #ef4444; /* Red */
+    --severity-high: #f97316;     /* Orange */
+    --severity-medium: #eab308;   /* Yellow */
+    --severity-low: #22c55e;      /* Green */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-image: url('home.jpg');
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* --- Header (Matches other pages) --- */
+.main-header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 1000;
+    background-color: rgba(24, 24, 27, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.logo { font-size: 1.875rem; font-weight: 900; color: var(--text-light); margin: 0; }
+.main-nav { display: flex; align-items: center; gap: 2.5rem; }
+.main-nav a { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.2s; }
+.main-nav a:hover { color: var(--text-light); }
+.main-nav a.active { color: var(--primary-color); font-weight: 700; }
+.user-actions { display: flex; align-items: center; gap: 1rem; }
+.welcome-user { font-weight: 500; color: var(--text-muted); font-size: 0.9rem; }
+.logout-btn-header { background-color: var(--primary-color); color: var(--text-light); text-decoration: none; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; border: none; transition: background-color 0.2s; }
+.logout-btn-header:hover { background-color: var(--primary-dark); }
+
+
+/* --- Main Layout --- */
+.grievance-tool-main {
+    display: flex;
+    gap: 2rem;
+    padding: 8rem 2rem 2rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+.left-panel { flex: 0 0 400px; }
+.grievance-board { flex-grow: 1; }
+
+.section-title-alt {
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 0 0 1.5rem 0;
+}
+
+/* --- Form Container Card --- */
+.card {
+    background-color: var(--bg-card);
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+}
+.card h3 {
+    font-size: 1.25rem; font-weight: 700; margin: 0 0 1.5rem 0;
+    display: flex; align-items: center; gap: 0.75rem;
+}
+
+/* --- Form Elements --- */
+#grievance-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.form-group label { font-weight: 500; margin-bottom: 0.5rem; display: block; }
+.form-group input[type="text"], .form-group textarea {
+    width: 100%; box-sizing: border-box; padding: 0.875rem;
+    border: 1px solid var(--border-color); border-radius: 0.5rem;
+    background-color: var(--bg-dark); color: var(--text-light); font-family: 'Inter', sans-serif;
+}
+.form-group input:focus, .form-group textarea:focus {
+    outline: none; border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.3);
+}
+.severity-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.severity-options label { display: flex; align-items: center; gap: 0.5rem; font-weight: 500; font-size: 0.9rem; }
+.submit-grievance-btn {
+    background-color: var(--primary-color); color: var(--text-light); font-weight: 700;
+    padding: 1rem; border: none; border-radius: 0.5rem; cursor: pointer; transition: background-color 0.2s;
+}
+.submit-grievance-btn:hover { background-color: var(--primary-dark); }
+.submit-grievance-btn:disabled { background-color: var(--primary-dark); opacity: 0.7; cursor: not-allowed; }
+
+/* --- Grievance List --- */
+#grievance-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.grievance-card {
+    background-color: var(--bg-card); padding: 1.5rem; border-radius: 1rem;
+    border: 1px solid var(--border-color); border-left: 5px solid; /* The color is set by severity class */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.grievance-card:hover { transform: translateY(-3px); }
+
+/* Severity Border Colors */
+.grievance-card.severity-critical { border-left-color: var(--severity-critical); }
+.grievance-card.severity-high { border-left-color: var(--severity-high); }
+.grievance-card.severity-medium { border-left-color: var(--severity-medium); }
+.grievance-card.severity-low { border-left-color: var(--severity-low); }
+
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-header h4 { margin: 0; font-size: 1.125rem; font-weight: 700; }
+.card-location { font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.25rem; }
+.card-description { margin: 0 0 1.25rem 0; color: var(--text-muted); line-height: 1.6; }
+.card-footer { display: flex; justify-content: space-between; align-items: center; }
+.upvote-section { display: flex; align-items: center; gap: 0.75rem; }
+.upvote-btn {
+    background: var(--bg-dark); color: var(--text-light); border: 1px solid var(--border-color);
+    border-radius: 0.5rem; width: 40px; height: 40px; cursor: pointer; display: flex;
+    align-items: center; justify-content: center; font-size: 1rem; transition: all 0.2s;
+}
+.upvote-btn:hover { background-color: var(--primary-color); border-color: var(--primary-color); }
+.upvote-count { font-weight: 700; font-size: 1.125rem; }
+.resolve-btn {
+    background: none; border: 1px solid var(--severity-low); color: var(--severity-low);
+    padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 500;
+    cursor: pointer; transition: all 0.2s;
+}
+.resolve-btn:hover { background-color: var(--severity-low); color: var(--text-light); }
+.empty-state {
+    text-align: center; color: var(--text-muted); padding: 3rem; background-color: var(--bg-card);
+    border-radius: 1rem; border: 2px dashed var(--border-color);
+}
+
+/* --- Footer (Matches other pages) --- */
+.main-footer { text-align: center; padding: 3rem 2rem; background-color: var(--text-dark); color: var(--text-muted); }
