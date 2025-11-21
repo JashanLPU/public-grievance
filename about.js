@@ -1,8 +1,5 @@
-// about.js - For About Page Specific Interactions
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Scroll-triggered Animations ---
     const scrollElements = document.querySelectorAll('.animate-on-scroll');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -13,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
     scrollElements.forEach(el => { observer.observe(el); });
 
-    // --- AI Chatbot Logic ---
     const chatbotContainer = document.getElementById('chatbot-container');
     const chatbotToggleBtn = document.getElementById('chatbot-toggle-btn');
     const chatbotMessages = document.getElementById('chatbot-messages');

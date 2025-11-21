@@ -1,8 +1,6 @@
 <?php
-// Start the session to access session variables
 session_start();
 
-// Check if the user is logged in.
 $is_logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 $username = $is_logged_in ? $_SESSION['username'] : '';
 ?>
@@ -13,16 +11,11 @@ $username = $is_logged_in ? $_SESSION['username'] : '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - CivicPulse</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- FIXED: Linking ONLY to the dedicated about.css file -->
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
 
-    <!-- =================================
-         HEADER
-    ================================== -->
     <header class="main-header">
         <div class="header-content">
             <a href="home.php" class="logo-link"><h1 class="logo">CivicPulse</h1></a>
@@ -36,7 +29,7 @@ $username = $is_logged_in ? $_SESSION['username'] : '';
             <div class="user-actions">
                 <?php if ($is_logged_in): ?>
                     <span class="welcome-user">Welcome, <?php echo htmlspecialchars($username); ?>!</span>
-                    <a href="logout.php" class="logout-btn-header">Logout</a>
+                    <a href="index.html" class="logout-btn-header">Logout</a>
                 <?php else: ?>
                     <a href="index.html" class="login-btn">Login / Sign Up</a>
                 <?php endif; ?>
@@ -44,11 +37,7 @@ $username = $is_logged_in ? $_SESSION['username'] : '';
         </div>
     </header>
 
-    <!-- =================================
-         MAIN CONTENT
-    ================================== -->
     <main class="about-main">
-        <!-- Page Title Section -->
         <section class="page-title-section">
             <div class="page-title-content">
                 <h2>Our Mission: A More Responsive City</h2>
@@ -56,7 +45,6 @@ $username = $is_logged_in ? $_SESSION['username'] : '';
             </div>
         </section>
 
-        <!-- Our Commitment Section -->
         <section class="commitment-section">
             <h3 class="section-title">Our Commitment to You</h3>
             <div class="steps-container">
@@ -78,11 +66,10 @@ $username = $is_logged_in ? $_SESSION['username'] : '';
             </div>
         </section>
 
-        <!-- Our Story Section -->
         <section class="story-section">
             <div class="story-container">
                 <div class="story-image animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format=fit=crop" alt="Team working together">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop" alt="Team working together">
                 </div>
                 <div class="story-content animate-on-scroll delay-1">
                     <h3 class="section-title-alt">Our Story</h3>
@@ -92,39 +79,26 @@ $username = $is_logged_in ? $_SESSION['username'] : '';
             </div>
         </section>
 
-        <!-- Meet the Team Section -->
         <section class="team-section">
             <h3 class="section-title">Meet the Team</h3>
             <div class="team-container">
                 <div class="team-member-card animate-on-scroll">
-                    <img src="https://placehold.co/400x400/7c3aed/ffffff?text=You" alt="Project Lead">
-                    <h4>Your Name</h4>
-                    <p>Project Lead & Visionary</p>
+                    <img src="https://placehold.co/400x400/7c3aed/ffffff?text=JS" alt="Jashandeep Singh">
+                    <h4>Jashandeep Singh</h4>
+                    <p>Project Lead & Backend Developer</p>
+                    <p class="description">Managed the project, designed the database, and built the entire backend functionality with PHP and MySQL.</p>
                 </div>
+                
                 <div class="team-member-card animate-on-scroll delay-1">
-                    <img src="https://placehold.co/400x400/27272a/ffffff?text=M2" alt="Team Member 2">
-                    <h4>Team Member 2</h4>
-                    <p>Backend Developer</p>
-                </div>
-                <div class="team-member-card animate-on-scroll delay-2">
-                    <img src="https://placehold.co/400x400/27272a/ffffff?text=M3" alt="Team Member 3">
-                    <h4>UI/UX Designer</h4>
-                </div>
-                <div class="team-member-card animate-on-scroll delay-3">
-                    <img src="https://placehold.co/400x400/27272a/ffffff?text=M4" alt="Team Member 4">
-                    <h4>Database Specialist</h4>
-                </div>
-                <div class="team-member-card animate-on-scroll delay-4">
-                    <img src="https://placehold.co/400x400/27272a/ffffff?text=M5" alt="Team Member 5">
-                    <h4>QA Tester</h4>
+                    <img src="https://placehold.co/400x400/27272a/ffffff?text=J" alt="Jaspreet">
+                    <h4>Jaspreet</h4>
+                    <p>Frontend Developer</p>
+                    <p class="description">Crafted the user interface and site responsiveness using HTML, CSS, and JavaScript.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- =================================
-         FOOTER
-    ================================== -->
     <footer class="main-footer">
         <p>&copy; 2025 CivicPulse. A project for our community. All rights reserved.</p>
         <div class="footer-links">
@@ -134,7 +108,6 @@ $username = $is_logged_in ? $_SESSION['username'] : '';
         </div>
     </footer>
     
-    <!-- AI CHATBOT -->
     <div id="chatbot-container">
         <button id="chatbot-toggle-btn" class="chatbot-btn">
             <i class="fa-solid fa-headset icon-closed"></i>
@@ -159,7 +132,6 @@ $username = $is_logged_in ? $_SESSION['username'] : '';
         </div>
     </div>
 
-    <!-- The about.js file now controls the animations AND the chatbot -->
     <script src="about.js"></script>
 
 </body>

@@ -1,16 +1,13 @@
-/* --- About Page - Complete & Independent Stylesheet (Final Theme) --- */
-
-/* --- Professional Dark & Purple Color Theme --- */
 :root {
-    --primary-color: #7c3aed; /* Vibrant Purple */
-    --primary-dark: rgba(40, 40, 50, 0.40); /* Greyish with 75% opacity */
-    --secondary-color: #22c55e; /* Vibrant Green */
-    --text-dark: #18181b; /* Dark Zinc 900 */
-    --text-light: #f4f4f5; /* Light Zinc 100 */
-    --text-muted: #a1a1aa; /* Muted Zinc 400 */
-    --bg-dark: #18181b; /* Dark Zinc 900 */
-    --bg-card: #27272a; /* Dark Zinc 800 */
-    --border-color: #3f3f46; /* Dark Zinc 700 */
+    --primary-color: #7c3aed;
+    --primary-dark: rgba(40, 40, 50, 0.40);
+    --secondary-color: #22c55e;
+    --text-dark: #1818b;
+    --text-light: #f4f4f5;
+    --text-muted: #a1a1aa;
+    --bg-dark: #1818b;
+    --bg-card: #27272a;
+    --border-color: #3f3f46;
 }
 
 html {
@@ -20,14 +17,12 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-dark);
-    /* ADDED: A subtle texture to give a more human-designed feel */
     background-image: url('home.jpg');
     background-attachment: fixed;
     margin: 0;
     color: var(--text-light);
 }
 
-/* --- Header --- */
 .main-header {
     position: fixed;
     top: 0;
@@ -74,7 +69,6 @@ body {
 }
 .logout-btn-header:hover, .login-btn:hover { background-color: var(--primary-dark); }
 
-/* --- About Page Specific Styles --- */
 .about-main {
     padding-top: 80px;
 }
@@ -127,6 +121,14 @@ body {
 .team-member-card h4 { font-size: 1.5rem; margin: 0 0 0.25rem 0; color: var(--text-light);}
 .team-member-card p { color: var(--primary-color); font-weight: 500; margin: 0; }
 
+.team-member-card p.description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 0.75rem;
+    line-height: 1.5;
+}
+
 .main-footer { text-align: center; padding: 3rem 2rem; background-color: var(--text-dark); color: #a1a1aa; }
 .main-footer p { margin: 0 0 1rem 0; }
 .footer-links a { color: #a1a1aa; text-decoration: none; margin: 0 0.5rem; transition: color 0.2s; }
@@ -142,7 +144,6 @@ body {
 .delay-3 { transition-delay: 0.45s; }
 .delay-4 { transition-delay: 0.6s; }
 
-/* --- AI Chatbot Styles --- */
 #chatbot-container { position: fixed; bottom: 2rem; right: 2rem; z-index: 1001; }
 .chatbot-btn {
     background-color: var(--primary-color); color: var(--text-light); width: 60px; height: 60px;

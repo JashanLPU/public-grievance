@@ -3,7 +3,7 @@
 
 // --- TEMPORARY DEBUGGING LINE ---
 // We will remove this later.
-echo "db_connect.php file was successfully loaded!";
+
 
 
 $servername = "localhost";

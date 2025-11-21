@@ -36,7 +36,7 @@ $username = $is_logged_in ? $_SESSION['username'] : '';
             <div class="user-actions">
                 <?php if ($is_logged_in): ?>
                     <span class="welcome-user">Welcome, <?php echo htmlspecialchars($username); ?>!</span>
-                    <a href="logout.php" class="logout-btn-header">Logout</a>
+                    <a href="index.html" class="logout-btn-header">Logout</a>
                 <?php else: ?>
                     <a href="index.html" class="login-btn">Login / Sign Up</a>
                 <?php endif; ?>

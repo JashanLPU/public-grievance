@@ -4,13 +4,14 @@ session_start();
 
 // Check if the user is logged in.
 $is_logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
-$username = $is_logged_in ? $_SESSION['username'] : '';
 
 // A user must be logged in to view this page.
 if (!$is_logged_in) {
     header("location: index.html");
     exit;
 }
+
+$username = $is_logged_in ? $_SESSION['username'] : '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,12 +19,9 @@ if (!$is_logged_in) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resolved Archive - CivicPulse</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="archive.css">
-</head>
+    </head>
 <body>
-
     <header class="main-header">
         <div class="header-content">
             <a href="home.php" class="logo-link"><h1 class="logo">CivicPulse</h1></a>
@@ -37,7 +35,7 @@ if (!$is_logged_in) {
             <div class="user-actions">
                 <?php if ($is_logged_in): ?>
                     <span class="welcome-user">Welcome, <?php echo htmlspecialchars($username); ?>!</span>
-                    <a href="logout.php" class="logout-btn-header">Logout</a>
+                    <a href="index.html" class="logout-btn-header">Logout</a>
                 <?php else: ?>
                     <a href="index.html" class="login-btn">Login / Sign Up</a>
                 <?php endif; ?>
@@ -54,16 +52,7 @@ if (!$is_logged_in) {
             </div>
     </main>
 
-    <footer class="main-footer">
-        <p>&copy; 2025 CivicPulse. A project for our community. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="about.php">About Us</a> |
-            <a href="contact.php">Contact</a> |
-            <a href="#">Privacy Policy</a>
-        </div>
-    </footer>
-
+    <footer class="main-footer">...</footer>
     <script src="archive.js"></script>
-
 </body>
 </html>
